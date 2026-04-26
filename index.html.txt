@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felices 10 meses ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Georgia', serif;
+    background:#0f0f0f;
+    color:white;
+    text-align:center;
+}
+
+.section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.cover{
+    background: url('foto2.jpg') center/cover no-repeat;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.6);
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+}
+
+.content{
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    font-size:40px;
+}
+
+p{
+    max-width:700px;
+    line-height:1.6;
+    font-size:18px;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    transition: all 1.2s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.image{
+    width:300px;
+    border-radius:20px;
+    margin:20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<div class="section cover">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Felices 10 meses, mi amor</h1>
+        <p>Para la mujer que cambió mi vida…</p>
+    </div>
+</div>
+
+<!-- FOTO + FRASE -->
+<div class="section fade">
+    <img src="foto1.jpg" class="image">
+    <p><i>Lo nuestro se siente como de película… pero es real, y es lo más bonito que tengo.</i></p>
+</div>
+
+<!-- CARTA -->
+<div class="section fade">
+<p>
+Mi amor, buenos días. Esperaba darte esto por la noche, pero al final decidí dártelo por la mañana, para que al despertar lo primero que vieras fuera esto que escribí con todo mi amor para ti, desde lo más profundo de mi corazón.
+<br><br>
+Amor, han pasado 10 meses fabulosos, 10 meses en los que he podido conocerte, aprender de ti y descubrir a una gran mujer… una mujer de la que sin duda me enamoré. Contigo encontré lo que para mí significa una pareja: alguien que me apoya, que me escucha, que me aconseja, que me ama y que siempre está para mí.
+<br><br>
+Eres mi presente, mi futuro… eres todo para mí.
+<br><br>
+Estamos a dos pasitos de cumplir un año… y estoy seguro de algo: contigo es con quien me quiero casar.
+<br><br>
+Te amo, mi amor. Felices 10 meses.
+</p>
+</div>
+
+<!-- FINAL -->
+<div class="section fade">
+    <h1>Te amo hoy, mañana y siempre</h1>
+    <p>Gracias por estos 10 meses… vamos por toda la vida.</p>
+</div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
